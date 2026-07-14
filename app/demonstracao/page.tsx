@@ -1,12 +1,13 @@
 import type {Metadata} from "next";
 import Image from "next/image";
 import Link from "next/link";
-import {IconArrowRight,IconBrandWhatsapp,IconBuildingStore,IconChartBar,IconCheck,IconCloud,IconHeadset,IconPackage,IconReceipt,IconShieldCheck,IconSparkles,IconUsers} from "@tabler/icons-react";
+import {IconArrowRight,IconBrandWhatsapp,IconBuildingStore,IconChartBar,IconCheck,IconShieldCheck,IconSparkles} from "@tabler/icons-react";
 import {DemoForm} from "./DemoForm";
+import {InteractiveDemo} from "./InteractiveDemo";
 import styles from "./demonstracao.module.css";
 
 const title="Loggxy ERP | Teste grátis por 15 dias";
-const description="Simplifique vendas, financeiro, estoque e gestão em uma única plataforma. Teste o Loggxy ERP grátis por 15 dias. Planos a partir de R$ 49,90.";
+const description="ERP multiempresas e modular para financeiro, estoque, CRM, logística, qualidade, beleza, agenda e integrações. Teste o Loggxy grátis por 15 dias.";
 
 export const metadata:Metadata={
   title,
@@ -18,17 +19,6 @@ export const metadata:Metadata={
   },
   twitter:{card:"summary_large_image",title:"Loggxy ERP — teste grátis por 15 dias",description:"Gestão simples. Empresa no controle. Planos a partir de R$ 49,90.",images:["/social/loggxy-demonstracao.png"]}
 };
-
-const benefits=[
-  [IconChartBar,"Decisões mais claras","Acompanhe vendas, caixa e indicadores em painéis fáceis de entender."],
-  [IconPackage,"Estoque organizado","Controle produtos, movimentações, compras e pedidos sem perder informação."],
-  [IconReceipt,"Financeiro em dia","Centralize contas, recebimentos e o fluxo financeiro da sua empresa."],
-  [IconUsers,"Clientes mais próximos","Organize contatos, oportunidades e atendimentos em um só lugar."],
-  [IconCloud,"Acesso conectado","Trabalhe com sua operação integrada e tenha as informações sempre à mão."],
-  [IconShieldCheck,"Controle e segurança","Defina acessos e mantenha os dados da empresa protegidos."],
-];
-
-const modules=["Vendas","Pedidos","Financeiro","Estoque","Compras","Faturamento","CRM","NF-e","CT-e","MDF-e","Logística","Relatórios"];
 
 export default function DemonstracaoPage(){return <main className={styles.page}>
   <header className={styles.header}>
@@ -42,9 +32,9 @@ export default function DemonstracaoPage(){return <main className={styles.page}>
     <div className={styles.heroGlow}/>
     <div className={styles.heroInner}>
       <div className={styles.heroCopy}>
-        <div className={styles.eyebrow}><IconSparkles size={15}/> 15 dias para experimentar grátis</div>
-        <h1>Gestão simples.<br/><em>Empresa no controle.</em></h1>
-        <p>Vendas, financeiro, estoque, clientes e operação conectados em uma plataforma que acompanha o crescimento do seu negócio.</p>
+        <div className={styles.eyebrow}><IconSparkles size={15}/> ERP multiempresas e modular</div>
+        <h1>Um sistema.<br/><em>Do seu jeito.</em></h1>
+        <p>Gerencie várias empresas e adicione somente as funções que sua operação precisa — financeiro, estoque, CRM, logística, qualidade, agenda e muito mais.</p>
         <div className={styles.price}><span>Planos de gerenciamento a partir de</span><strong><small>R$</small> 49,90</strong><i>/mês</i></div>
         <div className={styles.heroActions}><a href="#teste" className={styles.primary}>Começar teste grátis <IconArrowRight size={19}/></a><a href="#recursos" className={styles.secondary}>Saiba mais</a></div>
         <div className={styles.trust}><span><IconCheck/> Sem compromisso</span><span><IconCheck/> Suporte para começar</span></div>
@@ -59,17 +49,14 @@ export default function DemonstracaoPage(){return <main className={styles.page}>
   </section>
 
   <section className={styles.proof}>
-    <p>UMA PLATAFORMA PARA <b>VENDER</b><i/> <b>ORGANIZAR</b><i/> <b>CONTROLAR</b><i/> <b>CRESCER</b></p>
+    <p><b>MULTIEMPRESAS</b><i/> <b>SISTEMA MODULAR</b><i/> <b>INTEGRAÇÕES</b><i/> <b>GESTÃO COMPLETA</b></p>
   </section>
 
-  <section id="recursos" className={styles.section}>
-    <div className={styles.sectionHead}><span>MENOS PLANILHAS. MAIS CONTROLE.</span><h2>Tudo o que sua empresa precisa para avançar.</h2><p>Informação organizada para você gastar menos tempo procurando dados e mais tempo fazendo o negócio crescer.</p></div>
-    <div className={styles.benefitGrid}>{benefits.map(([Icon,label,text])=><article key={label as string}><div><Icon/></div><h3>{label as string}</h3><p>{text as string}</p></article>)}</div>
-  </section>
+  <InteractiveDemo/>
 
   <section className={styles.platform}>
     <div className={styles.platformInner}>
-      <div className={styles.platformCopy}><span>UM SISTEMA, VÁRIAS POSSIBILIDADES</span><h2>Comece pelo essencial.<br/>Evolua no seu ritmo.</h2><p>A Loggxy reúne os principais recursos de gestão em módulos que trabalham juntos. Você ganha visão da operação sem complicar a rotina.</p><div className={styles.moduleList}>{modules.map(item=><span key={item}><IconCheck/>{item}</span>)}</div><a href="#teste">Quero ver funcionando <IconArrowRight/></a></div>
+      <div className={styles.platformCopy}><span>MULTIEMPRESAS DE VERDADE</span><h2>Várias operações.<br/>Uma gestão central.</h2><p>Controle empresas, unidades e diferentes áreas em um único ambiente. Cada operação mantém seus dados organizados, enquanto você ganha uma visão mais ampla para decidir.</p><div className={styles.multiList}><span><IconCheck/><b>Ambientes organizados</b> por empresa ou unidade</span><span><IconCheck/><b>Usuários e permissões</b> conforme cada função</span><span><IconCheck/><b>Módulos sob medida</b> para cada tipo de operação</span><span><IconCheck/><b>Indicadores centralizados</b> para uma gestão mais clara</span></div><a href="#teste">Quero ver funcionando <IconArrowRight/></a></div>
       <div className={styles.platformCard}><div className={styles.cardTop}><IconBuildingStore/><span><b>Sua empresa em uma única visão</b>Operação conectada de ponta a ponta</span></div><Image src="/screenshots/financeiro.png" width={1024} height={640} alt="Tela do módulo financeiro Loggxy"/><div className={styles.cardStats}><span><b>+ controle</b>do dia a dia</span><span><b>- retrabalho</b>na operação</span><span><b>mais clareza</b>para decidir</span></div></div>
     </div>
   </section>
